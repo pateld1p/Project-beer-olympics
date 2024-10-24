@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Score App</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script type="module" src="scripts/firebase.js"></script>
-    <script type="module" src="scripts/app.js"></script>
-    <script type="module" src="scripts/score_keeper.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,12 +12,13 @@
         <div class="team" id="teamA">
             <ul id="teamAPlayers"></ul>
         </div>
-        <button class="addPlayer" onclick="addPlayer('teamA')">Add Player +</button>
+        <button class="addPlayer" data-team="teamA">Add Player +</button>
+        
         <h2>Team B</h2>
         <div class="team" id="teamB">
             <ul id="teamBPlayers"></ul>
         </div>
-        <button class="addPlayer" onclick="addPlayer('teamB')">Add Player +</button>
+        <button class="addPlayer" data-team="teamB">Add Player +</button>
     </div>
     
     <!-- Score Keeper Section -->
@@ -38,6 +36,11 @@
         </div>
         <button id="fetchScoresButton">Fetch Scores</button>
         <button id="selectGameButton" onclick="location.href='/select_game'">Select Game</button>
-    </div>    
+    </div>  
+    
+    <!-- Include your scripts here at the end of the body -->
+    <script type="module" src="scripts/firebase.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/score_keeper.js"></script>
 </body>
 </html>
